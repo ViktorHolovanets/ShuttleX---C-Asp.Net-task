@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ShuttleX_task_api.props" />
+</Project>
