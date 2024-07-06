@@ -25,54 +25,6 @@ services:
     networks:
       - rabbit_network
 
-  socket.right:
-    command: sh -c "npm install && npm run start"
-    build: ./consumer/socket.instance
-    volumes:
-      - ./consumer/socket.instance:/usr/src/app
-    networks:
-      - rabbit_network
-    depends_on:
-      - redis.socket
-    environment:
-      - SERVER_NAME=socket.right
-
-  socket.left:
-      command: sh -c "npm install && npm run start"
-      build: ./consumer/socket.instance
-      volumes:
-        - ./consumer/socket.instance:/usr/src/app
-      networks:
-        - rabbit_network
-      depends_on:
-        - redis.socket
-      environment:
-        - SERVER_NAME=socket.left
-
-  socket.emitter:
-    build: ./consumer/socket.emitter
-    command: sh -c "npm install && npm run start"
-    volumes:
-      - ./consumer/socket.emitter:/usr/src/app
-    networks:
-      - rabbit_network
-    expose:
-      - "3000"
-    environment:
-      - NAME=emitter
-    depends_on:
-      - rabbitmq
-      - redis.socket
-
-  redis.socket:
-    image: 'redis:alpine'
-    volumes:
-      - './volumes/db/redis/sockets:/data'
-    extra_hosts:
-      - 'host.docker.internal:host-gateway'
-    networks:
-      - rabbit_network
-
   api:
     build:
       context: ./ShuttleX_task_api
