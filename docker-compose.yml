@@ -24,6 +24,9 @@ services:
       - './volumes/database:/var/lib/mysql'
     networks:
       - rabbit_network
+    ports:
+      - "3306:3306"
+
 
   api:
     build:

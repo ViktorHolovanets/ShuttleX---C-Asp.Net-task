@@ -5,10 +5,10 @@ using ShuttleX_task_api.Services.Interfaces.DB;
 namespace ShuttleX_task_api.Controllers
 {
     [ApiController]
-    [Route("api/admin/users")]
-    public class UserController : BaseAppController<Message>
+    [Route("api/users")]
+    public class UserController : BaseAppController<User>
     {
-        public UserController(IBaseService<Message> service) : base(service)
+        public UserController(IBaseService<User> service) : base(service)
         {
         }
     }

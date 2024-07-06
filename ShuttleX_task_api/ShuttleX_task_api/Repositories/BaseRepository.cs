@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace ShuttleX_task_api.Repositories
 {
-    public abstract class BaseRepository<TEntity> : IEntityRepository<TEntity> where TEntity : BaseEntity
+    public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
     {
         protected readonly AppDb _context;
 
@@ -17,6 +17,8 @@ namespace ShuttleX_task_api.Repositories
         }
 
         public async Task<TEntity> GetByIdAsync(Guid id) => await BuildQuery().FirstOrDefaultAsync(entity => entity.Id == id);
+        public async Task<IEnumerable<TEntity>> GetAllAsync() => await BuildQuery().ToListAsync();
+
 
         public async Task<IEnumerable<TEntity>> GetAllAsync(PaginationInfo pagination)
         {
@@ -84,5 +86,7 @@ namespace ShuttleX_task_api.Repositories
 
             return query;
         }
+
+        
     }
 }

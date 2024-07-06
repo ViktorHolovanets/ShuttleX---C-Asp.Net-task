@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShuttleX_task_api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67dde3768ac97c05c68e2ad7c9ba730f513ff844")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a1ec9dbc58967aa133c0b1c48005e050184bb79")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShuttleX_task_api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShuttleX_task_api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

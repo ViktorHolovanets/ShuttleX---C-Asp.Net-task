@@ -7,8 +7,8 @@ namespace ShuttleX_task_api.Services
 {
     public class BaseService<TEntity> : IBaseService<TEntity>
     {
-        protected IEntityRepository<TEntity> _repository;
-        public BaseService(IEntityRepository<TEntity> repository)
+        protected IBaseRepository<TEntity> _repository;
+        public BaseService(IBaseRepository<TEntity> repository)
         {
             _repository = repository;
         }
@@ -48,6 +48,11 @@ namespace ShuttleX_task_api.Services
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync(PaginationInfo pagination)
         {
             return await _repository.GetAllAsync(pagination);
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            return await _repository.GetAllAsync();
         }
 
         public virtual async Task<TEntity> GetByIdAsync(Guid id)

@@ -6,6 +6,7 @@ namespace ShuttleX_task_api.Repositories
     {
         public UserRepository(AppDb context) : base(context)
         {
+            // 
         }
     }
 }
