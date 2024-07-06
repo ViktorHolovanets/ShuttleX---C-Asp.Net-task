@@ -1,13 +1,11 @@
+using ShuttleX_task_api.Models;
+using ShuttleX_task_api.Repositories.Interfaces;
+using ShuttleX_task_api.Repositories;
+using ShuttleX_task_api.Services.Interfaces.DB;
+using ShuttleX_task_api.Services;
 using Microsoft.EntityFrameworkCore;
-using My_one_day_life_api.Models;
-using My_one_day_life_api.Repositories;
-using My_one_day_life_api.Repositories.Interfaces;
-using My_one_day_life_api.Services;
-using My_one_day_life_api.Services.Interfaces.DB;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

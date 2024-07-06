@@ -3,22 +3,22 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
-EXPOSE 80
+EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["My_one-day_life_api/My_one-day_life_api.csproj", "My_one-day_life_api/"]
-RUN dotnet restore "./My_one-day_life_api/My_one-day_life_api.csproj"
+COPY ["ShuttleX_task_api/ShuttleX_task_api.csproj", "ShuttleX_task_api/"]
+RUN dotnet restore "./ShuttleX_task_api/ShuttleX_task_api.csproj"
 COPY . .
-WORKDIR "/src/My_one-day_life_api"
-RUN dotnet build "./My_one-day_life_api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/ShuttleX_task_api"
+RUN dotnet build "./ShuttleX_task_api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./My_one-day_life_api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./ShuttleX_task_api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "My_one-day_life_api.dll"]
+ENTRYPOINT ["dotnet", "ShuttleX_task_api.dll"]

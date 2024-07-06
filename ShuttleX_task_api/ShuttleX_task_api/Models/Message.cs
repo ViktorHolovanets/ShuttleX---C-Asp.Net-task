@@ -1,6 +1,6 @@
-﻿using My_one_day_life_api.Models.Base;
+﻿using ShuttleX_task_api.Models.Base;
 
-namespace My_one_day_life_api.Models
+namespace ShuttleX_task_api.Models
 {
     public class Message: BaseEntity
     {

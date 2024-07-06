@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using My_one_day_life_api.Helpers.Classes;
-using My_one_day_life_api.Models;
-using My_one_day_life_api.Models.Base;
-using My_one_day_life_api.Repositories.Interfaces;
+using ShuttleX_task_api.Helpers.Classes;
+using ShuttleX_task_api.Models;
+using ShuttleX_task_api.Models.Base;
+using ShuttleX_task_api.Repositories.Interfaces;
 using System.Linq.Expressions;
 
-namespace My_one_day_life_api.Repositories
+namespace ShuttleX_task_api.Repositories
 {
     public abstract class BaseRepository<TEntity> : IEntityRepository<TEntity> where TEntity : BaseEntity
     {

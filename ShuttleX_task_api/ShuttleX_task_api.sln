@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShuttleX_task_api", "My_one-day_life_api\ShuttleX_task_api.csproj", "{FED3BD77-CAAA-4C69-95CA-CEC67A35EE2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShuttleX_task_api", "ShuttleX_task_api\ShuttleX_task_api.csproj", "{B7236EB3-E50E-4A00-A40C-DEFEC3B5CBEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FED3BD77-CAAA-4C69-95CA-CEC67A35EE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FED3BD77-CAAA-4C69-95CA-CEC67A35EE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FED3BD77-CAAA-4C69-95CA-CEC67A35EE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FED3BD77-CAAA-4C69-95CA-CEC67A35EE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7236EB3-E50E-4A00-A40C-DEFEC3B5CBEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7236EB3-E50E-4A00-A40C-DEFEC3B5CBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7236EB3-E50E-4A00-A40C-DEFEC3B5CBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7236EB3-E50E-4A00-A40C-DEFEC3B5CBEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {65BF2613-E0F6-47A3-8E9F-0DA8CDF1417E}
+		SolutionGuid = {B6EB3066-6532-4197-AF5F-D7B97F9A2BA8}
 	EndGlobalSection
 EndGlobal

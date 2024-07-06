@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using My_one_day_life_api.Helpers.Classes;
-using My_one_day_life_api.Services.Interfaces.DB;
+using ShuttleX_task_api.Helpers.Classes;
+using ShuttleX_task_api.Services.Interfaces.DB;
 
-namespace My_one_day_life_api.Controllers
+namespace ShuttleX_task_api.Controllers
 {
     [ApiController]
-    public class BaseAppController<TEntity> : ControllerBase
+    public abstract class  BaseAppController<TEntity> : ControllerBase
     {
         protected readonly IBaseService<TEntity> _service;
         public BaseAppController(IBaseService<TEntity> service)

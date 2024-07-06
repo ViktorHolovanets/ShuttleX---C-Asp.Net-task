@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace My_one_day_life_api.Models.Base
+namespace ShuttleX_task_api.Models.Base
 {
     public class BaseEntity
     {

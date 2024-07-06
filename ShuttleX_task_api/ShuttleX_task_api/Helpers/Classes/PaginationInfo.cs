@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace My_one_day_life_api.Helpers.Classes
+namespace ShuttleX_task_api.Helpers.Classes
 {
     public class PaginationInfo
     {

@@ -1,7 +1,7 @@
-﻿using My_one_day_life_api.Helpers.Classes;
+﻿using ShuttleX_task_api.Helpers.Classes;
 using System.Linq.Expressions;
 
-namespace My_one_day_life_api.Services.Interfaces.DB
+namespace ShuttleX_task_api.Services.Interfaces.DB
 {
     public interface IBaseService<TEntity>
     {

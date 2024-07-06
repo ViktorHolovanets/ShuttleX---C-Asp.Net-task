@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace My_one_day_life_api.Models
+namespace ShuttleX_task_api.Models
 {
     public class AppDb : DbContext
     {

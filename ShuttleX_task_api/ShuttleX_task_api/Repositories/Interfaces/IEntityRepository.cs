@@ -1,6 +1,6 @@
-﻿using My_one_day_life_api.Helpers.Classes;
+﻿using ShuttleX_task_api.Helpers.Classes;
 
-namespace My_one_day_life_api.Repositories.Interfaces
+namespace ShuttleX_task_api.Repositories.Interfaces
 {
     public interface IEntityRepository<TEntity>
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using My_one_day_life_api.Models;
-using My_one_day_life_api.Services.Interfaces.DB;
+using ShuttleX_task_api.Models;
+using ShuttleX_task_api.Services.Interfaces.DB;
 
-namespace My_one_day_life_api.Controllers
+namespace ShuttleX_task_api.Controllers
 {
     [ApiController]
     [Route("api/admin/users")]

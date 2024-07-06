@@ -1,6 +1,6 @@
-﻿using My_one_day_life_api.Models;
+﻿using ShuttleX_task_api.Models;
 
-namespace My_one_day_life_api.Repositories
+namespace ShuttleX_task_api.Repositories
 {
     public class MessageRepository : BaseRepository<Message>
     {

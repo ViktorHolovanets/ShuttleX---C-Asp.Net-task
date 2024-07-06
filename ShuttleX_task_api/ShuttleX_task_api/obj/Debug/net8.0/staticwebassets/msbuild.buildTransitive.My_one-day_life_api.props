@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\My_one-day_life_api.props" />
-</Project>
