@@ -8,7 +8,7 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ShuttleX_task_api/ShuttleX_task_api.csproj", "ShuttleX_task_api/"]
+COPY ["./ShuttleX_task_api/ShuttleX_task_api/ShuttleX_task_api.csproj", "ShuttleX_task_api/"]
 RUN dotnet restore "./ShuttleX_task_api/ShuttleX_task_api.csproj"
 COPY . .
 WORKDIR "/src/ShuttleX_task_api"

@@ -16,7 +16,7 @@ namespace ShuttleX_task_api.Hubs
 
         public async Task SendMessage(Guid chatId, Guid userId, string message)
         {
-            var chatMessage = new Message { ChatId = chatId, UserId = userId, Content = message };
+            var chatMessage = new Message { ChatId = chatId, CreatedByUserId = userId, Content = message };
             _context.Messages.Add(chatMessage);
             await _context.SaveChangesAsync();
 

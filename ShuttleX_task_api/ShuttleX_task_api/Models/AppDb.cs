@@ -11,11 +11,35 @@ namespace ShuttleX_task_api.Models
             : base(options) => Database.EnsureCreated();
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Chat>()
-                .HasMany(c => c.Messages)
-                .WithOne(m => m.Chat)
+            // User
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.CreatedChats)
+                .WithOne(c => c.CreatedByUser)
+                .HasForeignKey(c => c.CreatedByUserId);
+
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.CreatedMessages)
+                .WithOne(m => m.CreatedByUser)
+                .HasForeignKey(m => m.CreatedByUserId);
+
+            //  Message
+            modelBuilder.Entity<Message>()
+                .HasOne(m => m.Chat)
+                .WithMany(c => c.Messages)
                 .HasForeignKey(m => m.ChatId);
+
+            modelBuilder.Entity<Message>()
+                .HasOne(m => m.CreatedByUser)
+                .WithMany(u => u.CreatedMessages)
+                .HasForeignKey(m => m.CreatedByUserId);
+
+            // Chat
+            modelBuilder.Entity<Chat>()
+                .HasOne(c => c.CreatedByUser)
+                .WithMany(u => u.CreatedChats)
+                .HasForeignKey(c => c.CreatedByUserId);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

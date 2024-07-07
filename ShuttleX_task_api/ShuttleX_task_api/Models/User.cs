@@ -8,5 +8,7 @@ namespace ShuttleX_task_api.Models
     public class User : BaseEntity
     {
         public required string Name { get; set; }
+        public ICollection<Chat>? CreatedChats { get; set; }
+        public ICollection<Message>? CreatedMessages { get; set; }
     }
 }

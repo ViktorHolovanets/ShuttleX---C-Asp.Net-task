@@ -1,16 +1,5 @@
 version: '3'
 services:
-  rabbitmq:
-    image: rabbitmq:3.12.2-management
-    environment:
-      RABBITMQ_DEFAULT_USER: user
-      RABBITMQ_DEFAULT_PASS: password
-    networks:
-      - rabbit_network
-    ports:
-      - "5672:5672"
-      - "15672:15672"
-
   db:
     image: 'mysql/mysql-server:latest'
     environment:
@@ -27,7 +16,6 @@ services:
     ports:
       - "3306:3306"
 
-
   api:
     build:
       context: ./ShuttleX_task_api
@@ -36,7 +24,13 @@ services:
       - rabbit_network
     depends_on:
       - db
-      - rabbitmq
+
+  tests:
+    build:
+      context: .
+      dockerfile: ./ShuttleX_task_api/ChatsControllerTests/Dockerfile
+    depends_on:
+      - api
 
   nginx:
     image: nginx:alpine
@@ -46,7 +40,6 @@ services:
       - rabbit_network
     depends_on:
       - db
-      - rabbitmq
       - api
     ports:
       - "80:80"

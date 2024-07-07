@@ -29,7 +29,7 @@ namespace ShuttleX_task_api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error retrieving all items."); // 500 Internal Server Error
+                return StatusCode(500, "Error retrieving all items.");
             }
         }
 
@@ -43,7 +43,7 @@ namespace ShuttleX_task_api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error retrieving items with pagination."); // 500 Internal Server Error
+                return StatusCode(500, "Error retrieving items with pagination.");
             }
         }
 
@@ -55,13 +55,13 @@ namespace ShuttleX_task_api.Controllers
                 TEntity item = await _service.GetByIdAsync(id);
                 if (item == null)
                 {
-                    return NotFound(); // 404 Not Found
+                    return NotFound();
                 }
                 return Ok(item);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error retrieving item by id."); // 500 Internal Server Error
+                return StatusCode(500, "Error retrieving item by id.");
             }
         }
 
@@ -71,11 +71,11 @@ namespace ShuttleX_task_api.Controllers
             try
             {
                 TEntity createdEntity = await _service.AddAsync(entity);
-                return StatusCode(201, createdEntity); // 201 Created
+                return StatusCode(201, createdEntity);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error creating entity."); // 500 Internal Server Error
+                return StatusCode(500, "Error creating entity.");
             }
         }
 
@@ -85,11 +85,11 @@ namespace ShuttleX_task_api.Controllers
             try
             {
                 await _service.UpdateAsync(entity);
-                return NoContent(); // 204 No Content
+                return NoContent();
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error updating entity."); // 500 Internal Server Error
+                return StatusCode(500, "Error updating entity.");
             }
         }
 
@@ -99,11 +99,11 @@ namespace ShuttleX_task_api.Controllers
             try
             {
                 await _service.DeleteAsync(id);
-                return NoContent(); // 204 No Content
+                return NoContent();
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "Error deleting entity."); // 500 Internal Server Error
+                return StatusCode(500, "Error deleting entity.");
             }
         }
     }

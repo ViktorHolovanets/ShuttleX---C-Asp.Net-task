@@ -9,13 +9,9 @@ namespace ShuttleX_task_api.Controllers
     [Route("api/chats")]
     public class ChatController : BaseAppController<Chat>
     {
-       
-        private readonly IBaseService<Message> _messageService;
 
-        public ChatController(IBaseService<Chat> chatService, IBaseService<Message> messageService):base(chatService)
+        public ChatController(IBaseService<Chat> chatService):base(chatService)
         {
-          
-            _messageService = messageService;
         }
 
         [HttpDelete("{id}")]
