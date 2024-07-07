@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  shuttlex_task_api:
+    image: ${DOCKER_REGISTRY-}shuttlextaskapi
+    build:
+      context: .
+      dockerfile: ShuttleX_task_api/Dockerfile
+    networks:
+      - network
+
+  db:
+    image: 'mysql/mysql-server:latest'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password!23'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: 'modelsDb'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - './volumes/database:/var/lib/mysql'
+    networks:
+      - network
+    ports:
+      - "3306:3306"
+
+networks:
+  network:
+    driver: bridge
