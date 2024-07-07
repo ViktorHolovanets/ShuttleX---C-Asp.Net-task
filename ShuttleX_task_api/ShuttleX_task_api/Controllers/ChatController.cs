@@ -28,7 +28,6 @@ namespace ShuttleX_task_api.Controllers
             {
                 return Forbid("There are no permissions to do the operation.");
             }
-
             await _service.DeleteAsync(id);
             return NoContent();
         }

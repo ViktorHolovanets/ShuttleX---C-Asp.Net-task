@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using ShuttleX_task_api.Controllers;
-using ShuttleX_task_api.Models;
 using ShuttleX_task_api.Services.Interfaces.DB;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+
 
 namespace UnitTestsController
 {

@@ -22,89 +22,47 @@ namespace ShuttleX_task_api.Controllers
         [HttpGet("all")]
         public virtual async Task<ActionResult> GetAllAsync()
         {
-            try
-            {
-                IEnumerable<TEntity> items = await _service.GetAllAsync();
-                return Ok(items);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error retrieving all items.");
-            }
+            IEnumerable<TEntity> items = await _service.GetAllAsync();
+            return Ok(items);
         }
 
         [HttpGet("pagination")]
         public virtual async Task<ActionResult> GetAllAsync([FromQuery] PaginationInfo pagination)
         {
-            try
-            {
-                IEnumerable<TEntity> items = await _service.GetAllAsync(pagination);
-                return Ok(items);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error retrieving items with pagination.");
-            }
+            IEnumerable<TEntity> items = await _service.GetAllAsync(pagination);
+            return Ok(items);
         }
 
         [HttpGet("{id}")]
         public virtual async Task<ActionResult> GetByIdAsync(Guid id)
         {
-            try
+            TEntity item = await _service.GetByIdAsync(id);
+            if (item == null)
             {
-                TEntity item = await _service.GetByIdAsync(id);
-                if (item == null)
-                {
-                    return NotFound();
-                }
-                return Ok(item);
+                return NotFound();
             }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error retrieving item by id.");
-            }
+            return Ok(item);
         }
 
         [HttpPost]
         public virtual async Task<ActionResult> CreateAsync([FromBody] TEntity entity)
         {
-            try
-            {
-                TEntity createdEntity = await _service.AddAsync(entity);
-                return StatusCode(201, createdEntity);
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error creating entity.");
-            }
+            TEntity createdEntity = await _service.AddAsync(entity);
+            return StatusCode(201, createdEntity);
         }
 
         [HttpPut("{id}")]
         public virtual async Task<ActionResult> UpdateAsync(Guid id, [FromBody] TEntity entity)
         {
-            try
-            {
-                await _service.UpdateAsync(entity);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error updating entity.");
-            }
+            await _service.UpdateAsync(entity);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
         public virtual async Task<ActionResult> DeleteAsync(Guid id)
         {
-            try
-            {
-                await _service.DeleteAsync(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, "Error deleting entity.");
-            }
+            await _service.DeleteAsync(id);
+            return NoContent();
         }
     }
 }

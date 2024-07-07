@@ -5,6 +5,7 @@ using ShuttleX_task_api.Services.Interfaces.DB;
 using ShuttleX_task_api.Services;
 using Microsoft.EntityFrameworkCore;
 using ShuttleX_task_api.Hubs;
+using ShuttleX_task_api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +37,7 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
 }));
 
 var app = builder.Build();
-
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
